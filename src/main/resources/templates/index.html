@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Users</title>
+</head>
+<body>
+<div th:fragment="body" style="float: left">
+    &nbsp;&nbsp;&nbsp;&nbsp; Now is: <b th:text="${execInfo.now.time}"></b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/addUser}">Add User</a>
+</div>
+</body>
+</html>

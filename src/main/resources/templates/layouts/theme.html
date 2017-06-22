@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head">
+</head>
+<body>
+<div th:replace="layouts/leftSideMenu ::leftSideMenu"></div>
+<div th:replace="${body} :: body"></div>
+<div th:replace="layouts/rightSideMenu ::rightSideMenu"></div>
+<footer th:replace="layouts/footer ::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/header :: head">
+</head>
+<body>
+<div th:replace="layouts/leftSideMenu ::leftSideMenu"></div>
+<form action="#" th:action="@{/saveUser}" th:object="${userEntity}" method="post">
+    <table>
+        <tr>
+            <td>name:</td>
+            <td><input type="text" th:field="*{name}" required="required"></input></td>
+        </tr>
+        <tr th:if="${#fields.hasErrors('name')}">
+            <td colspan="2" th:errors="*{name}"></td>
+        </tr>
+        <tr>
+            <td>age:</td>
+            <td><input type="number" th:field="*{age}" min="18"></input></td>
+        </tr>
+        <tr th:if="${#fields.hasErrors('age')}">
+            <td colspan="2" th:errors="*{age}"></td>
+        </tr>
+        <tr>
+            <td> <input type ="submit" value="save"></input></td>
+        </tr>
+    </table>
+</form>
+<div th:replace="layouts/rightSideMenu ::rightSideMenu"></div>
+<footer th:replace="layouts/footer ::footer"></footer>
+</body>
+</html>
